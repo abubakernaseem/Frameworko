@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+/* ------------------------------
+   Dark Mode Support
+------------------------------ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------
+   Global Styles
+------------------------------ */
+* {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  cursor: none; /* Using custom cursor */
+}
+
+/* ------------------------------
+   Theme Colors
+------------------------------ */
+@theme {
+  --color-primary: #5044E5;
+}
