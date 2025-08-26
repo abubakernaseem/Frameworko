@@ -22,7 +22,7 @@ function Navbar({ theme, setTheme, sidebarOpen, setSidebarOpen }) {
     >
       {/* Logo */}
       <img
-        src={theme === "dark" ? assets.logo_dark : assets.logo}
+        src={theme === "dark" ? assets.logo : assets.logo_dark}
         className="w-32 sm:w-40"
         alt="logo"
       />

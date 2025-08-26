@@ -5,19 +5,19 @@ import { motion } from "motion/react";
 
 const workData = [
   {
-    title: "Mobile app marketing",
+    title: "Website Development",
     description:
-      "We turn bold ideas into powerful digital solutions that connect, engage...",
+      "We design responsive, modern, and user-friendly websites that elevate your online presence.Our focus is on speed, security, and seamless user experience.",
     image: assets.work_mobile_app,
   },
   {
-    title: "Dashboard management",
-    description: "We help you execute your plan and deliver results.",
+    title: "Application Development",
+    description: "We build scalable, custom applications that bring your ideas to life.From concept to launch, we ensure performance and innovation.",
     image: assets.work_dashboard_management,
   },
   {
-    title: "Fitness app promotion",
-    description: "We help you create a marketing strategy that drives results.",
+    title: "Social Media Marketing",
+    description: "We grow your brand with engaging social media campaigns.Our strategies connect you with the right audience at the right time.",
     image: assets.work_fitness_app,
   },
 ];

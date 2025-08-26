@@ -21,7 +21,7 @@ const Footer = ({ theme }) => {
           className="space-y-5 text-sm text-gray-800 dark:text-gray-300"
         >
           <img
-            src={theme === 'dark' ? assets.logo_dark : assets.logo}
+            src={theme === 'dark' ? assets.logo : assets.logo_dark}
             className="w-32 sm:w-44"
             alt="GreatStack Logo"
           />
@@ -89,7 +89,7 @@ const Footer = ({ theme }) => {
         viewport={{ once: true }}
         className="pb-6 text-sm text-gray-500 flex justify-center sm:justify-between gap-4 flex-wrap"
       >
-        <p>Copyright 2025 GreatStack - All Rights Reserved.</p>
+        <p>Copyright 2025 frameworko - All Rights Reserved.</p>
         <div className="flex items-center gap-4">
           <img
             src={assets.facebook_icon}

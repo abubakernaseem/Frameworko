@@ -7,26 +7,43 @@ import { motion } from "motion/react";
 const Services = () => {
   const servicesData = [
     {
-      title: "Advertising",
-      description:
-        "We turn bold ideas into powerful digital solutions that connect, engage...",
+      title: "Website Design & Development",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Custom Website Design & Development</li>
+          <li>Responsive & Mobile-Friendly Design</li>
+        </ul>
+      ),
       icon: assets.ads_icon,
     },
     {
-      title: "Content marketing",
-      description: "We help you execute your plan and deliver results.",
+      title: "E-Commerce Solutions",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Online Stores & Secure Payment Integration</li>
+          <li>SEO & Marketing Integration</li>
+        </ul>
+      ),
       icon: assets.marketing_icon,
     },
     {
-      title: "Content writing",
-      description:
-        "We help you create a marketing strategy that drives results.",
+      title: "UI/UX & Optimization",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>UI/UX Design</li>
+          <li>SEO & Speed Optimization</li>
+        </ul>
+      ),
       icon: assets.content_icon,
     },
     {
-      title: "Social media",
-      description:
-        "We help you build a strong social media presence and engage with your audience.",
+      title: "Support & Maintenance",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>Website Maintenance & Ongoing Support</li>
+          <li>Hosting & Server Management</li>
+        </ul>
+      ),
       icon: assets.social_icon,
     },
   ];

@@ -3,7 +3,7 @@ import arrow_icon from './arrow_icon.svg'
 import group_profile from './group_profile.png'
 import bgImage1 from './bgImage1.png'
 import bgImage2 from './bgImage2.png'
-import hero_img from './hero_img.png'
+import hero_webimg from './web-design.png'
 import microsoft_logo from './microsoft_logo.png'
 import zoom_logo from './zoom_logo.png'
 import rakuten_logo from './rakuten_logo.png'
@@ -46,7 +46,7 @@ const assets = {
   group_profile,
   bgImage1,
   bgImage2,
-  hero_img,
+  hero_webimg,
   ads_icon,
   content_icon,
   marketing_icon,

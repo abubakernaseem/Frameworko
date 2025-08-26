@@ -64,7 +64,7 @@ const Hero = () => {
         className="relative"
       >
         <img
-          src={assets.hero_img}
+          src={assets.hero_webimg}
           alt="Hero Illustration"
           className="w-full max-w-6xl"
         />

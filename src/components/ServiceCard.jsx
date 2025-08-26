@@ -62,7 +62,7 @@ const ServiceCard = ({ service, index }) => {
           <img
             src={service.icon}
             alt={`${service.title} icon`}
-            className="w-16 h-16 rounded-full"
+            className="w-8 h-8 rounded-full"
           />
         </div>
 
