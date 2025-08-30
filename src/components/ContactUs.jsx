@@ -6,28 +6,38 @@ import { motion } from "motion/react";
 
 const ContactUs = () => {
   const onSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    formData.append("access_key", "b4b93d1b-9411-468a-a07f-af1e5bfb2a7d");
+  event.preventDefault();
 
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        toast.success('Thank you for your submission!');
-        event.target.reset();
-      } else {
-        toast.error(data.message || "Submission failed!");
-      }
-    } catch (error) {
-      toast.error(error.message || "Something went wrong!");
-    }
+  const formData = {
+    demoName: event.target.name.value,
+    category: "Website Inquiry", // or map a field
+    pages: "N/A",                // or map a field
+    description: event.target.message.value,
+    email: event.target.email.value
   };
+
+  try {
+    const response = await fetch("http://localhost:5000/request-demo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await response.json();
+
+    if (data.ok) {
+      toast.success("Thank you for your submission!");
+      event.target.reset();
+    } else {
+      toast.error(data.error || "Submission failed!");
+    }
+  } catch (error) {
+    toast.error(error.message || "Something went wrong!");
+  }
+};
+
 
   return (
     <motion.div
@@ -55,11 +65,7 @@ const ContactUs = () => {
         <div>
           <p className="mb-2 text-sm font-medium">Your name</p>
           <div className="flex items-center pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
-            <img
-              src={assets.person_icon}
-              alt="Person icon"
-              className="w-5 h-5 mr-2"
-            />
+            <img src={assets.person_icon} alt="Person icon" className="w-5 h-5 mr-2" />
             <input
               name="name"
               type="text"
@@ -73,13 +79,9 @@ const ContactUs = () => {
 
         {/* Email */}
         <div>
-          <p className="mb-2 text-sm font-medium">Email id</p>
+          <p className="mb-2 text-sm font-medium">Email</p>
           <div className="flex items-center pl-3 rounded-lg border border-gray-300 dark:border-gray-600">
-            <img
-              src={assets.email_icon}
-              alt="Email icon"
-              className="w-5 h-5 mr-2"
-            />
+            <img src={assets.email_icon} alt="Email icon" className="w-5 h-5 mr-2" />
             <input
               name="email"
               type="email"
@@ -112,11 +114,7 @@ const ContactUs = () => {
             className="w-max flex items-center gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-105 transition-all"
           >
             Submit
-            <img
-              src={assets.arrow_icon}
-              alt="Arrow icon"
-              className="w-4"
-            />
+            <img src={assets.arrow_icon} alt="Arrow icon" className="w-4" />
           </button>
         </div>
       </motion.form>

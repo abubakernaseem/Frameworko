@@ -7,21 +7,19 @@ import { motion } from "motion/react";
 const Services = () => {
   const servicesData = [
     {
-      title: "Website Design & Development",
+      title: "Website Development",
       description: (
         <ul className="list-disc pl-5 space-y-1">
-          <li>Custom Website Design & Development</li>
-          <li>Responsive & Mobile-Friendly Design</li>
+          <li>From responsive sites to advanced web platforms, we blend creativity and technology to deliver websites that are visually stunning, functional and future-ready.</li>
         </ul>
       ),
       icon: assets.ads_icon,
     },
     {
-      title: "E-Commerce Solutions",
+      title: "E-commerce Development",
       description: (
         <ul className="list-disc pl-5 space-y-1">
-          <li>Online Stores & Secure Payment Integration</li>
-          <li>SEO & Marketing Integration</li>
+          <li>Build secure, scalable, and feature-packed online stores with us. Optimized for smooth checkouts, flexible payments and maximum conversions for every business.</li>
         </ul>
       ),
       icon: assets.marketing_icon,
@@ -30,18 +28,34 @@ const Services = () => {
       title: "UI/UX & Optimization",
       description: (
         <ul className="list-disc pl-5 space-y-1">
-          <li>UI/UX Design</li>
-          <li>SEO & Speed Optimization</li>
+          <li>Our team creates intuitive, user-centric interfaces. Minimal complexity, maximum engagement ensuring every interaction from front-end is seamless and delightful.</li>
         </ul>
       ),
       icon: assets.content_icon,
     },
     {
+      title: "Mobile App Development",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>We craft sleek, high-performance mobile apps tailored to your business. Using frameworks like React Native and Ionic, we deliver solutions that engage users and accelerate growth.</li>
+        </ul>
+      ),
+      icon: assets.mobileapp_icon,
+    },
+    {
+      title: "Digital Marketing",
+      description: (
+        <ul className="list-disc pl-5 space-y-1">
+          <li>We deliver result-driven digital marketing campaigns. From SEO and content marketing to PPC and social media, we help your brand reach the right audience and boost ROI.</li>
+        </ul>
+      ),
+      icon: assets.difitalmarketing_icon,
+    },
+    {
       title: "Support & Maintenance",
       description: (
         <ul className="list-disc pl-5 space-y-1">
-          <li>Website Maintenance & Ongoing Support</li>
-          <li>Hosting & Server Management</li>
+          <li>We provide reliable, proactive support and maintenance for your digital solutions. We ensure your apps, websites, and software run flawlessly so you can focus on growing your business.</li>
         </ul>
       ),
       icon: assets.social_icon,

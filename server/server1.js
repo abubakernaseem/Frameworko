@@ -51,7 +51,7 @@ app.get("/test-email", async (req, res) => {
   }
 });
 
-// Main form submission route
+/* ---------------- EXISTING DEMO REQUEST ---------------- */
 app.post("/request-demo", async (req, res) => {
   try {
     const { demoName, category, pages, description, email } = req.body;
@@ -71,17 +71,14 @@ app.post("/request-demo", async (req, res) => {
       <p>Deliver in 2 days (free of cost).</p>
     `;
 
-    const teamMailOptions = {
+    await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.TEAM_EMAIL, // test with external email if needed
+      to: process.env.TEAM_EMAIL,
       subject: "New Free Demo Website Request",
       html: teamHtml,
-    };
+    });
 
-    const teamInfo = await transporter.sendMail(teamMailOptions);
-    console.log("Team email sent:", teamInfo.response);
-
-    // Email to the user
+    // Confirmation email to user
     const userHtml = `
       <h2>We received your demo request 🎉</h2>
       <p>Thanks for requesting a free demo website. Here are your details:</p>
@@ -95,20 +92,73 @@ app.post("/request-demo", async (req, res) => {
       <p>— Your Team</p>
     `;
 
-    const userMailOptions = {
+    await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
       subject: "Your Free Demo Website Request",
       html: userHtml,
-    };
-
-    const userInfo = await transporter.sendMail(userMailOptions);
-    console.log("User email sent:", userInfo.response);
+    });
 
     res.json({ ok: true });
   } catch (err) {
     console.error("Email sending failed:", err);
     res.status(500).json({ error: "Failed to send email." });
+  }
+});
+
+/* ---------------- NEW PROJECT REQUEST ---------------- */
+app.post("/project-request", async (req, res) => {
+  try {
+    const { projectName, category, pages, description, sampleUrl, email } = req.body;
+
+    if (!projectName || !category || !pages || !description || !email) {
+      return res.status(400).json({ error: "All fields are required." });
+    }
+
+    // Email to your team
+    const teamHtml = `
+      <h2>New Project Request</h2>
+      <p><b>Project Name:</b> ${projectName}</p>
+      <p><b>Category:</b> ${category}</p>
+      <p><b>Pages:</b> ${pages}</p>
+      <p><b>Description:</b> ${description}</p>
+      <p><b>Sample URL:</b> ${sampleUrl || "N/A"}</p>
+      <p><b>User Email:</b> ${email}</p>
+    `;
+
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: process.env.TEAM_EMAIL,
+      subject: "New Project Request",
+      html: teamHtml,
+    });
+
+    // Confirmation email to user
+    const userHtml = `
+      <h2>We received your project request </h2>
+      <p>Thanks for sharing details about your project. Here’s a summary:</p>
+      <ul>
+        <li><b>Project Name:</b> ${projectName}</li>
+        <li><b>Category:</b> ${category}</li>
+        <li><b>Pages:</b> ${pages}</li>
+        <li><b>Sample:</b> ${sampleUrl || "N/A"}</li>
+      </ul>
+      <p><b>Description:</b> ${description}</p>
+      <p>Our team will review and get back to you soon.</p>
+      <p>— Your Team</p>
+    `;
+
+    await transporter.sendMail({
+      from: process.env.EMAIL_USER,
+      to: email,
+      subject: "Your Project Request Received",
+      html: userHtml,
+    });
+
+    res.json({ ok: true });
+  } catch (err) {
+    console.error("Project email failed:", err);
+    res.status(500).json({ error: "Failed to send project request." });
   }
 });
 

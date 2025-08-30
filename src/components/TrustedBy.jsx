@@ -19,7 +19,7 @@ const TrustedBy = () => {
         viewport={{ once: true }}
         className="font-semibold"
       >
-        Trusted by Leading Companies
+        We’ve built expertise working with top organizations
       </motion.h3>
 
       {/* Company Logos */}
