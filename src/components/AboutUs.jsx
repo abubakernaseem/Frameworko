@@ -1,4 +1,5 @@
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import assets from "../assets/assets.js";
 
 export default function Example() {
   return (
@@ -57,7 +58,7 @@ export default function Example() {
                         lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
           <img
             alt="Project Screenshot"
-            src="./src/assets/agile.png"
+            src={assets.agile}
             className="bg-transparent"
           />
         </div>

@@ -45,6 +45,7 @@ import rabaat from './rabaat-home.png'
 import abl from './allied-home.png'
 import lts from './lts-home.jpg'
 import iac from './iac-home.png'
+import agile from './agile.png'
 import moon_icon from './moon_icon.svg'
 
 
@@ -99,6 +100,7 @@ const assets = {
   abl,
   lts,
   iac,
+  agile,
   moon_icon
 }
 
