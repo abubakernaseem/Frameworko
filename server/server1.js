@@ -35,21 +35,21 @@ transporter.verify((err, success) => {
 });
 
 // Test route to check email sending
-app.get("/test-email", async (req, res) => {
-  try {
-    const info = await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: "your-personal-email@gmail.com", // replace with your test email
-      subject: "Test Email from Frameworko Node Server",
-      text: "This is a test email to verify SMTP configuration.",
-    });
-    console.log("Test email sent:", info.response);
-    res.json({ ok: true, response: info.response });
-  } catch (err) {
-    console.error("Test email failed:", err);
-    res.status(500).json({ error: err.message });
-  }
-});
+// app.get("/test-email", async (req, res) => {
+//   try {
+//     const info = await transporter.sendMail({
+//       from: process.env.EMAIL_USER,
+//       to: "your-personal-email@gmail.com", // replace with your test email
+//       subject: "Test Email from Frameworko Node Server",
+//       text: "This is a test email to verify SMTP configuration.",
+//     });
+//     console.log("Test email sent:", info.response);
+//     res.json({ ok: true, response: info.response });
+//   } catch (err) {
+//     console.error("Test email failed:", err);
+//     res.status(500).json({ error: err.message });
+//   }
+// });
 
 /* ---------------- EXISTING DEMO REQUEST ---------------- */
 app.post("/request-demo", async (req, res) => {
@@ -80,7 +80,7 @@ app.post("/request-demo", async (req, res) => {
 
     // Confirmation email to user
     const userHtml = `
-      <h2>We received your demo request 🎉</h2>
+      <h2>We received your demo website request 🎉</h2>
       <p>Thanks for requesting a free demo website. Here are your details:</p>
       <ul>
         <li><b>Demo Name:</b> ${demoName}</li>
@@ -88,14 +88,16 @@ app.post("/request-demo", async (req, res) => {
         <li><b>Pages:</b> ${pages}</li>
       </ul>
       <p><b>Description:</b> ${description}</p>
-      <p>We'll deliver your demo within <b>2 days</b> and notify you at this email.</p>
-      <p>— Your Team</p>
+      <p>Frameworko will deliver your demo within <b>2 days</b> and notify you at this email.</p>
+      <p>Frameworko</p>
+      <p>support@frameworko.com</p>
+      <p>+965 98996030</p>
     `;
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: email,
-      subject: "Your Free Demo Website Request",
+      subject: "Frameworko: Your Free Demo Website Request",
       html: userHtml,
     });
 
@@ -135,7 +137,7 @@ app.post("/project-request", async (req, res) => {
 
     // Confirmation email to user
     const userHtml = `
-      <h2>We received your project request </h2>
+      <h2>Frameworko received your project request </h2>
       <p>Thanks for sharing details about your project. Here’s a summary:</p>
       <ul>
         <li><b>Project Name:</b> ${projectName}</li>
@@ -145,7 +147,9 @@ app.post("/project-request", async (req, res) => {
       </ul>
       <p><b>Description:</b> ${description}</p>
       <p>Our team will review and get back to you soon.</p>
-      <p>— Your Team</p>
+      <p>Frameworko</p>
+      <p>support@frameworko.com</p>
+      <p>+965 98996030</p>
     `;
 
     await transporter.sendMail({

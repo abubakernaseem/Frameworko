@@ -17,7 +17,7 @@ const TrustedBy = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="font-semibold"
+        className="font-semibold mt-12"
       >
         We’ve built expertise working with top organizations
       </motion.h3>
@@ -28,7 +28,7 @@ const TrustedBy = () => {
         whileInView="visible"
         transition={{ staggerChildren: 0.1 }}
         viewport={{ once: true }}
-        className="flex items-center justify-center flex-wrap gap-10 m-4"
+        className="flex items-center justify-center flex-wrap gap-20 m-4"
       >
         {company_logos.map((logo, index) => (
           <motion.img

@@ -51,11 +51,15 @@ const Footer = ({ theme }) => {
           viewport={{ once: true }}
           className="text-gray-600 dark:text-gray-400"
         >
-          <h3 className="font-semibold">Subscribe to our newsletter</h3>
+          <h3 className="font-semibold">Contact Us</h3>
+
           <p className="text-sm mt-2 mb-6">
-            The latest news, articles, and resources, sent to your inbox weekly.
+            support@frameworko.com
           </p>
-          <form
+          <p className="text-sm mt-2 mb-6">
+            <a href="tel:+96598996030">+965 98996030</a>
+          </p>
+          {/* <form
             onSubmit={(e) => {
               e.preventDefault();
               // TODO: Add your subscribe logic here
@@ -75,8 +79,9 @@ const Footer = ({ theme }) => {
             >
               Subscribe
             </button>
-          </form>
+          </form> */}
         </motion.div>
+        
       </div>
 
       <hr className="border-gray-300 dark:border-gray-600 my-6" />

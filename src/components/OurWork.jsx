@@ -1,24 +1,73 @@
 import React from "react";
 import Title from "./Title";
 import assets from "../assets/assets.js";
-import { motion } from "motion/react";
+import { motion } from "framer-motion"; // fixed import
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const workData = [
   {
-    title: "Website Development",
+    title: "Aihostingo",
     description:
-      "We design responsive, modern, and user-friendly websites that elevate your online presence.Our focus is on speed, security, and seamless user experience.",
-    image: assets.work_mobile_app,
+      "Hosting automation platform with WordPress, WHMCS, PHP. Integrated with cPanel, MySQL and Payment Gateways to provide end-to-end hosting services.",
+    image: assets.aihostingo,
   },
   {
-    title: "Application Development",
-    description: "We build scalable, custom applications that bring your ideas to life.From concept to launch, we ensure performance and innovation.",
-    image: assets.work_dashboard_management,
+    title: "Matlay",
+    description:
+      "Business website built on WordPress + PHP with MySQL database for dynamic content management for a company providing crypto and digital solutions.",
+    image: assets.matlay,
   },
   {
-    title: "Social Media Marketing",
-    description: "We grow your brand with engaging social media campaigns.Our strategies connect you with the right audience at the right time.",
-    image: assets.work_fitness_app,
+    title: "TheUnityWealth",
+    description:
+      "A financial platform using Laravel + MySQL with APIs, Payment Gateways and Email SMTP integration for secure online transactions. it's a complete MLM sytems",
+    image: assets.theunitywealth,
+  },
+  {
+    title: "NIMS",
+    description:
+      "A modern web application with Node.js backend, React.js frontend and Bootstrap UI for responsive design. They create and launch a nims coins on blockchain.",
+    image: assets.nims,
+  },
+  {
+    title: "BlueID",
+    description:
+      "Enterprise-grade solution in IBM using Java, JSP, Angular, REST APIs, deployed on Linux servers connected with MySQL. We provide middleware services.",
+    image: assets.blueid,
+  },
+  {
+    title: "Flahnaser",
+    description:
+      "Portfolio/landing site for a construction Company in KSA using HTML5, Bootstrap, PHP, JavaScript for lightweight deployment to showcase their services.",
+    image: assets.flahnaser,
+  },
+  {
+    title: "Rabaat",
+    description:
+      "Multi-technology stack project using Node.js, React.js, Vue.js, TailwindCSS for scalable full-stack solutions. They brought a new idea to provide discounts/deals on bank cards.",
+    image: assets.rabaat,
+  },
+  {
+    title: "Allied Bank Limited",
+    description:
+      "Worked with Python + Hive DB + Graph API for financial data management and reporting. They want to develop a system to use their social media data for analytics purpose.",
+    image: assets.abl,
+  },
+  {
+    title: "Lahore Times Square",
+    description:
+      "Business solutions using MS365, PowerApps, PowerBI and MSAdmin Center for automation and data insights. We help them to utilize Microsoft services to enhance their system.",
+    image: assets.lts,
+  },
+  {
+    title: "IAC",
+    description:
+      "Educational website project using Node.js + Vue.js + Tailwind + MySQL with a focus on lightweight scalable architecture. for their Admin and students to connect with each other.",
+    image: assets.iac,
   },
 ];
 
@@ -38,26 +87,40 @@ const OurWork = () => {
         desc="From strategy to execution, we craft digital solutions that move your business forward."
       />
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-5xl">
+      {/* Slider Section */}
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spaceBetween={20}
+        slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 4 },
+        }}
+        navigation
+        pagination={{ clickable: true }}
+        className="w-full max-w-6xl !pb-10"
+      >
         {workData.map((work, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            viewport={{ once: true }}
-            className="hover:scale-105 transition-all duration-500 cursor-pointer"
-          >
-            <img
-              src={work.image}
-              alt={work.title}
-              className="w-full rounded-xl"
-            />
-            <h3 className="mt-3 mb-2 text-lg font-semibold">{work.title}</h3>
-            <p className="text-sm opacity-60 w-5/6">{work.description}</p>
-          </motion.div>
+          <SwiperSlide key={index}>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              className="hover:scale-105 transition-all duration-500 cursor-pointer bg-white dark:bg-gray-800 p-4 rounded-xl shadow"
+            >
+              <img
+                src={work.image}
+                alt={work.title}
+                className="w-full rounded-xl"
+              />
+              <h3 className="mt-3 mb-2 text-lg font-semibold">{work.title}</h3>
+              <p className="text-sm opacity-60">{work.description}</p>
+            </motion.div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </motion.div>
   );
 };

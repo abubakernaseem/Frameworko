@@ -35,6 +35,16 @@ import airbnb_logo from './airbnb_logo.svg'
 import google_logo from './google_logo.svg'
 import menu_icon_dark from './menu_icon_dark.svg'
 import sun_icon from './sun_icon.svg'
+import aihostingo from './aihostingo-home.png'
+import matlay from './matlay-home.png'
+import theunitywealth from './theunity-home.png'
+import nims from './nims-home.png'
+import blueid from './blueid-home.png'
+import flahnaser from './flahnasser-home.png'
+import rabaat from './rabaat-home.png'
+import abl from './allied-home.png'
+import lts from './lts-home.jpg'
+import iac from './iac-home.png'
 import moon_icon from './moon_icon.svg'
 
 
@@ -79,6 +89,16 @@ const assets = {
   logo_dark,
   menu_icon_dark,
   sun_icon,
+  aihostingo,
+  matlay,
+  theunitywealth,
+  nims,
+  blueid,
+  flahnaser,
+  rabaat,
+  abl,
+  lts,
+  iac,
   moon_icon
 }
 

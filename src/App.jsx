@@ -7,6 +7,7 @@ import OurWork from './components/OurWork.jsx';
 import Teams from './components/Teams.jsx';
 import AboutUs from './components/AboutUs.jsx';
 import ContactUs from './components/ContactUs.jsx';
+import Whatsapp from './components/Whatsappbutton.jsx';
 import Footer from './components/Footer.jsx';
 import { Toaster } from 'react-hot-toast';
 
@@ -81,6 +82,7 @@ const App = () => {
       <OurWork />
       <Teams />
       <ContactUs />
+      <Whatsapp />
       <Footer theme={theme} />
 
       {/* Custom Cursor */}
