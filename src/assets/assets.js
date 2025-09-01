@@ -46,6 +46,7 @@ import abl from './allied-home.png'
 import lts from './lts-home.jpg'
 import iac from './iac-home.png'
 import agile from './agile.png'
+import frameworkologo from './Frameworko-logo.png'
 import moon_icon from './moon_icon.svg'
 
 
@@ -101,6 +102,7 @@ const assets = {
   lts,
   iac,
   agile,
+  frameworkologo,
   moon_icon
 }
 

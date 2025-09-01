@@ -21,6 +21,11 @@ function Navbar({ theme, setTheme, sidebarOpen, setSidebarOpen }) {
                  bg-white/50 dark:bg-gray-900/70"
     >
       {/* Logo */}
+      {/* <img
+        src={theme === "dark" ? assets.frameworkologo : assets.frameworkologo}
+        className="w-8 sm:w-16"
+        alt="logo"
+      /> */}
       <img
         src={theme === "dark" ? assets.logo : assets.logo_dark}
         className="w-32 sm:w-40"
